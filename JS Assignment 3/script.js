@@ -13,6 +13,8 @@ const authorElem = document.querySelector(".author");
 const shareTweeterBtnElem = document.querySelector(".share-twitter");
 const clipBoardButtonElem = document.querySelector(".clip-board");
 
+const soundBtnElem = document.querySelector(".sound");
+
 // A global variable "data" is created so that it can be accessed from any function
 let data;
 
@@ -81,6 +83,21 @@ clipBoardButtonElem.addEventListener("click", () =>
 // it redirects to the Twitter share URL with the quote.
 shareTweeterBtnElem.addEventListener("click", () => {
   window.open(`https://twitter.com/intent/tweet?text=${data.data.content}`);
+});
+
+soundBtnElem.addEventListener("click", () => {
+  const soundElem = document.querySelector(".sound-tag");
+  const soundIcon = soundBtnElem.querySelector("i");
+
+  if (!soundElem.paused) {
+    soundIcon.classList.remove("fa-volume-high");
+    soundIcon.classList.add("fa-volume-xmark");
+    soundElem.pause();
+  } else {
+    soundIcon.classList.add("fa-volume-high");
+    soundIcon.classList.remove("fa-volume-xmark");
+    soundElem.play();
+  }
 });
 
 // Generate the initial quote when the page loads.
