@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Quote Generator</title>
+    <!-- This is the link for my icons; my icons are loaded from here -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- This is my stylesheet where my CSS is written -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Here I am building a random quote generator -->
+
+    <!-- This is the container for my structure -->
+    <div class="container">
+      <!-- This is the heading for my random quote generator -->
+      <div class="heading">
+        <h1>Quote of the Day</h1>
+      </div>
+
+      <!-- This is the main content where I display the quote and the author -->
+      <div class="content">
+        <!-- This paragraph is used to display the quote -->
+        <p class="quote">
+          Never give up because you never know if the next try is going to be the
+          one that works.
+        </p>
+
+        <!-- This paragraph displays the author's name -->
+        <p class="author">— Mary Kay Ash</p>
+      </div>
+
+      <!-- This div acts as a divider in the UI; it just draws a line between the content and the buttons -->
+      <div class="divider"></div>
+
+      <!-- This is the footer section where all the buttons are placed for sharing, copying, or generating a new quote -->
+      <div class="footer">
+        <!-- This wrapper contains the action buttons that let me copy or share the quote.
+             The <i> tags inside these buttons are icons -->
+        <div class="action-buttons">
+          <!-- This is the music button; you can turn music on or off using this button -->
+          <button class="action-button sound">
+            <i class="fa-solid fa-volume-high"></i>
+          </button>
+
+          <!-- This is the copy button; clicking this lets me copy the quote -->
+          <button class="action-button clip-board">
+            <i class="fa-solid fa-copy"></i>
+            <span class="copied-text">copied</span>
+          </button>
+
+          <!-- This is a Twitter share button; clicking this will post the quote on Twitter -->
+          <button class="action-button share-twitter">
+            <i class="fa-brands fa-twitter"></i>
+          </button>
+        </div>
+
+        <!-- Finally, this button generates a new quote -->
+        <button class="new-quote-btn">New Quote</button>
+      </div>
+    </div>
+
+    <!-- This is my script where I have written the functionality -->
+    <script src="./script.js"></script>
+  </body>
+</html>
