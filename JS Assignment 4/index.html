@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Books - Library</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<!-- This is HTML structure, where I've already designed the HTML so that I won't have trouble with JS later -->
+
+<!-- This is container that holds all the main fields -->
+<div class="container">
+    <!-- This is header, which has a search bar and a toggle button for list/grid view -->
+    <div class="header">
+        <div class="search">
+            <input type="text" placeholder="The Power of your subconscious mind" />
+            <i class="fas fa-search"></i>
+        </div>
+        <div class="gridOrList">
+            <button>
+                <img src="https://img.icons8.com/ios-filled/50/table-1.png" alt="table-1" />
+            </button>
+        </div>
+    </div>
+
+    <!-- This is main section where I'm displaying all books with details -->
+    <main class="main">
+        <!-- This heading changes based on the data. For instance, if the user searches, it can change -->
+        <h2 class="heading">All books —</h2>
+
+        <!-- This is books wrapper where all the books are displayed.
+         If there are no books, "No Books Found" is displayed. -->
+        <div class="books ">
+            <!-- This "no-data" div is commented out because I'm displaying it through JS -->
+            <!--
+      <div class="no-data">
+        <h3>No Books Found</h3>
+        <p>Try searching for a different title or author.</p>
+      </div>
+      -->
+
+            <!-- This is a single book. It's commented out so any dev can see the structure of a single book
+           and understand what styling is applied. -->
+            <!--<div class="book ">
+        <div class="thumb-nail">
+          <img
+            src="http://books.google.com/books/content?id=dfJqmAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api"
+            alt=""
+          />
+        </div>
+        <div class="content">
+          <div class="title-author">
+            <p class="title">Coder to Developer</p>
+            <p class="author"><span>author</span> - Mike Gunderloy</p>
+          </div>
+          <div class="publisher-date">
+            <p class="publisher">Sybex</p>
+            <p class="publishedDate">2004-05-07</p>
+          </div>
+        </div>
+      </div>
+      -->
+        </div>
+    </main>
+
+    <!-- This is the full details page or component that becomes visible (block) when a book is clicked,
+       and the books wrapper is hidden (none). It's default is none. -->
+    <div class="full-book-details">
+        <!-- All the details go here -->
+        <!--<div class="book-detail">
+      <div class="thumb-nail">
+        Primary Thumbnail
+        <img src="http://books.google.com/books/content?id=dfJqmAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api"
+            alt="Book Thumbnail" class="primary-img" />
+        Secondary Thumbnail (Optional)
+    </div>
+
+    <div class="content">
+        <h3 class="title">Coder to Developer</h3>
+        <p class="author">
+            <span>Author:</span> Mike Gunderloy
+        </p>
+        <p class="publisher">
+            <span>Publisher:</span> Sybex
+        </p>
+        <p class="publishedDate">
+            <span>Published Date:</span> 2004-05-07
+        </p>
+
+        Additional fields from the sample design
+        <p class="edition">
+            <span>Edition:</span> Kindle
+        </p>
+        <p class="rating">
+            <span>Rating:</span> 7,560
+        </p>
+
+        <p class="description">
+            This book provides a comprehensive guide for developers to transition
+            from coding to becoming a professional developer. It covers essential
+            skills, tools, and practices to excel in the software development
+            industry.
+        </p>
+    </div>
+</div>
+-->
+
+        <!-- This close button goes back to the "All Books" page and hides the details page -->
+        <!--<button class="back-btn"><i class="fa-solid fa-xmark"></i></button>-->
+    </div>
+
+    <!-- This is the pagination div that controls pagination -->
+    <div class="pagination">
+        <!-- The "Previous" button fetches the previous page of data if available -->
+        <button class="prev-btn">Previous</button>
+        <!-- This shows the current page and total pages -->
+        <span class="page-info">Page 1 of 10</span>
+        <!-- Similar to the "Previous" button, if there's a next page, it fetches the next page's data -->
+        <button class="next-btn">Next</button>
+    </div>
+</div>
+
+<script src="./script.js"></script>
+</body>
+
+</html>

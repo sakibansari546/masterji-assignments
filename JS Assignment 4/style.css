@@ -1,0 +1,489 @@
+/* There's no real need to understand this if it's unclear. 
+   It's just styling. If you want to see the main idea, 
+   check lines 93 to 128 which I've commented. */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(236, 236, 236);
+  font-family: monospace;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #fff;
+  border-bottom-color: #000;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  width: 65vw;
+  height: 100%;
+  min-height: 80vh;
+  margin: 0 auto;
+  background: #ffffff;
+  padding-inline: 20px;
+}
+
+/* Header Start */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgray;
+  padding: 15px 0px;
+}
+
+.header .search input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 300px;
+}
+
+.header .search i {
+  margin-left: -25px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.header .gridOrList button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.header .gridOrList button img {
+  width: 24px;
+  height: 24px;
+}
+/* Header End */
+
+/* Main Start */
+.main {
+  min-height: 70vh;
+  background: #ffffff;
+  margin: 20px 0;
+  /* display: none; */
+}
+
+.main h2 {
+  padding: 20px 0;
+  font-size: 25px;
+}
+
+/* This is my "books" wrapper, where each book is displayed three by three or four ny four accouring to device size.
+     By default, it's shown in grid form. To switch it to list view, 
+     I add a .list class to the .books container, which changes the layout. */
+
+.books {
+  margin: 20px 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex-direction: column; */
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.books.list {
+  flex-direction: column;
+}
+
+.books .book {
+  /* background: #fbf5f5; */
+  width: 220px;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  cursor: pointer;
+  /* justify-content: space-; */
+}
+
+/* If I add the .list class to a single book, 
+     it turns the entire book layout into a list style. 
+     I've done some responsive adjustments, etc. */
+
+.books .book.list {
+  flex-direction: row;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  gap: 50px;
+}
+
+.books .book .thumb-nail img {
+  width: 100%;
+  height: 300px;
+  display: block;
+  border-radius: 5px;
+}
+
+.books .book.list .thumb-nail img {
+  width: 150px;
+  /* Set a fixed width */
+  height: auto;
+  /* Maintain aspect ratio */
+  border-radius: 5px;
+}
+
+.books .book .content {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-right: 5px;
+}
+
+.books .book .content .title-author {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.content .title-author .title {
+  font-size: 16px;
+  font-weight: bold;
+}
+.content .subtitle {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.title-author .author span {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.504);
+  font-style: normal;
+}
+
+.title-author .author {
+  font-size: 15px;
+  font-style: italic;
+}
+
+.publisher-date {
+  width: 100%;
+  /* display: flex;
+  justify-content: space-between; */
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.publisher-date .publisher {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.publisher-date .publishedDate {
+  color: rgba(0, 0, 0, 0.468);
+}
+
+.no-data {
+  text-align: center;
+  margin-top: 50px;
+  color: #555;
+}
+
+.no-data .h3 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+.no-data p {
+  font-size: 16px;
+  color: #777;
+}
+/* Main End */
+@media (max-width: 640px) {
+  .container {
+    width: 100%;
+    padding-inline: 10px;
+    margin: 0 auto;
+  }
+
+  .container h2 {
+    padding: 20px 5px;
+  }
+
+  .books {
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .books .book.list {
+    gap: 20px;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding-bottom: 30px;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.page-info {
+  font-size: 14px;
+  color: #333;
+}
+
+.full-book-details {
+  display: none;
+  max-width: 900px;
+  margin: 30px auto;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.book-detail {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.full-book-details .thumb-nail {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  min-width: 220px;
+}
+
+.full-book-details .thumb-nail img {
+  display: block;
+  border-radius: 5px;
+  width: 220px;
+  height: auto;
+  object-fit: cover;
+}
+
+.full-book-details .thumb-nail .secondary-img {
+  width: 120px;
+  opacity: 0.8;
+}
+
+.full-book-details .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.full-book-details .content .title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+}
+
+.full-book-details .content p {
+  font-size: 16px;
+  color: #555;
+  margin: 0;
+}
+
+.full-book-details .content p span {
+  font-weight: 600;
+  color: #333;
+  margin-right: 5px;
+}
+
+.full-book-details .description {
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.back-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #aeaeae;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #000000;
+  color: #fff;
+}
+.back-btn i {
+  font-size: 22px;
+}
+
+@media (max-width: 768px) {
+  .full-book-details .book-detail {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .full-book-details .thumb-nail {
+    flex-direction: row;
+    gap: 20px;
+    min-width: 150px;
+  }
+
+  .full-book-details .thumb-nail img {
+    width: 150px;
+  }
+
+  .full-book-details .thumb-nail .secondary-img {
+    width: 80px;
+  }
+
+  .full-book-details .content {
+    align-items: center;
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .header .search input {
+    font-size: 12px;
+  }
+
+  .content .title-author .title,
+  .content .subtitle {
+    font-size: 14px;
+  }
+
+  .title-author .author span,
+  .title-author .author {
+    font-size: 13px;
+  }
+
+  .publisher-date .publisher,
+  .publisher-date .publishedDate {
+    font-size: 13px;
+  }
+
+  .no-data .h3 {
+    font-size: 20px;
+  }
+
+  .no-data p {
+    font-size: 14px;
+  }
+
+  .pagination button {
+    font-size: 12px;
+  }
+
+  .page-info {
+    font-size: 12px;
+  }
+
+  .full-book-details .content .title {
+    font-size: 20px;
+  }
+
+  .full-book-details .content p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+
+  .header .search input {
+    font-size: 10px;
+  }
+
+  .content .title-author .title,
+  .content .subtitle {
+    font-size: 12px;
+  }
+
+  .title-author .author span,
+  .title-author .author {
+    font-size: 11px;
+  }
+
+  .publisher-date .publisher,
+  .publisher-date .publishedDate {
+    font-size: 11px;
+  }
+
+  .no-data .h3 {
+    font-size: 18px;
+  }
+
+  .no-data p {
+    font-size: 12px;
+  }
+
+  .pagination button {
+    font-size: 10px;
+  }
+
+  .page-info {
+    font-size: 10px;
+  }
+
+  .full-book-details .content .title {
+    font-size: 18px;
+  }
+
+  .full-book-details .content p {
+    font-size: 12px;
+  }
+}
