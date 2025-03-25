@@ -46,4 +46,4 @@ A simple web application that displays books from an API. Users can view books i
 
 ## Deployment
 
-This application is deployed on Vercel. You can access the live application <https://masterji-assignments-eta.vercel.app/JS>[ Assignment 3/index.html](https://masterji-assignments-eta.vercel.app/JS%20Assignment%204/index.html).
+This application is deployed on Vercel. You can access the live application [ Books Library](https://masterji-assignments-eta.vercel.app/JS%20Assignment%204/index.html).
