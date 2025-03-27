@@ -75,6 +75,25 @@ body {
   width: 24px;
   height: 24px;
 }
+
+.header .sort {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header .sort label {
+  font-size: 14px;
+  color: #333;
+}
+
+.header .sort select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
 /* Header End */
 
 /* Main Start */

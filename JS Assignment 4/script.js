@@ -65,7 +65,7 @@ function togglingListAndGrid() {
 async function getAllBooks(userQuery, pageNo, sorting) {
   let query = userQuery ?? "";
   let page = pageNo || 1;
-  let inc = sorting;
+  let sort = sorting;
   const res = await fetch(
     `https://api.freeapi.app/api/v1/public/books?page=${page}&limit=10&inc=kind%252Cid%252Cetag%252CvolumeInfo&query=${query}`,
     { method: "GET", headers: { accept: "application/json" } }
@@ -238,7 +238,6 @@ function debounce(fn, delay) {
   };
 }
 
-
 // Pagination handlers
 nextBtnElem.addEventListener("click", () => {
   currentPage++;
@@ -247,6 +246,15 @@ nextBtnElem.addEventListener("click", () => {
 preBtnElem.addEventListener("click", () => {
   currentPage--;
   displayAllBooks("", currentPage, "");
+});
+
+// Sorting functionality
+let sortSelectElem = document.querySelector(".sort select");
+
+// Event listener for sorting
+sortSelectElem.addEventListener("change", (e) => {
+  const selectedSort = e.target.value;
+  displayAllBooks(searchInputElem.value, currentPage, selectedSort);
 });
 
 // Initially call displayAllBooks to load the first page
