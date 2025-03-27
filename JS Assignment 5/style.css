@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f9f9f9; /* Light theme background */
+  color: #333; /* Light theme text color */
+}
+
+body.dark-theme {
+  background-color: #1e1e1e; /* Dark theme background */
+  color: #f5f5f5; /* Dark theme text color */
+}
+
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#header {
+  width: 100%;
+  min-height: 300px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#download-btn,
+#reset-btn,
+#theme-btn {
+  background-color: #e0e0e0; /* Light theme button background */
+  color: #000; /* Light theme button text */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 5px 0;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-theme #download-btn,
+body.dark-theme #reset-btn,
+body.dark-theme #theme-btn {
+  background-color: #333; /* Dark theme button background */
+  color: #f5f5f5; /* Dark theme button text */
+}
+
+#download-btn:hover,
+#theme-btn:hover,
+#reset-btn:hover {
+  background-color: #b0b0b0; /* Light theme button hover */
+}
+
+body.dark-theme #download-btn:hover,
+body.dark-theme #theme-btn:hover,
+body.dark-theme #reset-btn:hover {
+  background-color: #555; /* Dark theme button hover */
+}
+
+#download-btn i,
+#theme-btn i,
+#reset-btn i {
+  margin-right: 5px;
+}
+
+textarea {
+  width: 100%;
+  height: 300px;
+  padding-top: 10px;
+  padding-left: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc; /* Light theme border */
+  background-color: #fff; /* Light theme background */
+  color: #333; /* Light theme text */
+  resize: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+body.dark-theme textarea {
+  border: 1px solid #555; /* Dark theme border */
+  background-color: #2a2a2a; /* Dark theme background */
+  color: #f5f5f5; /* Dark theme text */
+}
+
+#content {
+  width: 100%;
+  min-height: 300px;
+  padding: 10px;
+  background-color: #fff; /* Light theme background */
+  color: #333; /* Light theme text */
+  border: 1px solid #ccc; /* Light theme border */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+body.dark-theme #content {
+  background-color: #2a2a2a; /* Dark theme background */
+  color: #f5f5f5; /* Dark theme text */
+  border: 1px solid #555; /* Dark theme border */
+}
