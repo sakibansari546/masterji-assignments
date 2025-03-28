@@ -5,6 +5,11 @@ const resetBtn = document.querySelector("#reset-btn");
 const downloadBtn = document.querySelector("#download-btn");
 const themeBtn = document.querySelector("#theme-btn");
 
+marked.setOptions({
+  breaks: true,
+  gfm: true,
+});
+
 // Handling theme toggle
 themeBtn.addEventListener("click", () => {
   const body = document.body;
